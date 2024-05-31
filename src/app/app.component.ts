@@ -42,7 +42,9 @@ export class AppComponent implements OnInit {
     let auxCardList = this.cardList;
 
     auxCardList = this.cardList.filter((card) =>
-      card.title.toLocaleLowerCase().includes(event.target.value)
+      card.title.toLocaleLowerCase().includes(event.target.value) || 
+      card.title.toUpperCase().includes(event.target.value)
+
     );
 
     this.allCardList = auxCardList;
