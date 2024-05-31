@@ -41,10 +41,10 @@ export class AppComponent implements OnInit {
   searchCard(event: any) {
     let auxCardList = this.cardList;
 
-    auxCardList = this.cardList.filter((card) =>
-      card.title.toLocaleLowerCase().includes(event.target.value) || 
-      card.title.toUpperCase().includes(event.target.value)
+    let searchVal = event.target.value.toLowerCase()
 
+    auxCardList = this.cardList.filter((card) =>
+      card.title.toLowerCase().includes(searchVal) 
     );
 
     this.allCardList = auxCardList;
